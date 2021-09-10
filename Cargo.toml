@@ -34,3 +34,7 @@ path = "src/adapter/main.rs"
 [[bin]]
 name = "bridge"
 path = "src/bridge/main.rs"
+
+[[bin]]
+name = "filter"
+path = "src/filter/main.rs"
