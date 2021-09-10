@@ -30,3 +30,7 @@ path = "src/prototype/main.rs"
 [[bin]]
 name = "adapter"
 path = "src/adapter/main.rs"
+
+[[bin]]
+name = "bridge"
+path = "src/bridge/main.rs"
