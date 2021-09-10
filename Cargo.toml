@@ -10,3 +10,7 @@ edition = "2018"
 [[bin]]
 name = "factory"
 path = "src/factory/main.rs"
+
+[[bin]]
+name = "abstract_factory"
+path = "src/abstract_factory/main.rs"
