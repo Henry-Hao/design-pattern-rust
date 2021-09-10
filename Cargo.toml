@@ -22,3 +22,7 @@ path = "src/singleton/main.rs"
 [[bin]]
 name = "builder"
 path = "src/builder/main.rs"
+
+[[bin]]
+name = "prototype"
+path = "src/prototype/main.rs"
