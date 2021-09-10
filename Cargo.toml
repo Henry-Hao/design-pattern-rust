@@ -26,3 +26,7 @@ path = "src/builder/main.rs"
 [[bin]]
 name = "prototype"
 path = "src/prototype/main.rs"
+
+[[bin]]
+name = "adapter"
+path = "src/adapter/main.rs"
