@@ -18,3 +18,7 @@ path = "src/abstract_factory/main.rs"
 [[bin]]
 name = "singleton"
 path = "src/singleton/main.rs"
+
+[[bin]]
+name = "builder"
+path = "src/builder/main.rs"
