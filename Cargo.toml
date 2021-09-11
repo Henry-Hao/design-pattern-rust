@@ -42,3 +42,7 @@ path = "src/filter/main.rs"
 [[bin]]
 name = "proxy"
 path = "src/proxy/main.rs"
+
+[[bin]]
+name = "observer"
+path = "src/observer/main.rs"
