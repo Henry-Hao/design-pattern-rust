@@ -50,3 +50,7 @@ path = "src/observer/main.rs"
 [[bin]]
 name = "strategy"
 path = "src/strategy/main.rs"
+
+[[bin]]
+name = "visitor"
+path = "src/visitor/main.rs"
