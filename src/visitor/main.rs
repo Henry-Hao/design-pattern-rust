@@ -13,7 +13,7 @@ struct Monitor;
 struct Computer {
     keyboard: Keyboard,
     mouse: Mouse,
-    monitor: Monitor
+    monitor: Monitor,
 }
 
 impl ComputerPart for Computer {
@@ -34,7 +34,7 @@ impl Computer {
     }
 }
 
-impl ComputerPart for Mouse{
+impl ComputerPart for Mouse {
     fn accept(&self, visitor: &Box<&dyn ComputerPartVisitor>) {
         visitor.visit(&Box::new(self as &dyn ComputerPart));
     }
@@ -62,7 +62,6 @@ impl ComputerPartVisitor for ComputerPartDisplayVisitor {
         println!("{:?} is visiting", part);
     }
 }
-
 
 fn main() {
     let computer = Computer::new();

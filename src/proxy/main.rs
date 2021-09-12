@@ -3,19 +3,17 @@ trait Image {
 }
 
 struct RealImage {
-    filename: String
+    filename: String,
 }
 
 struct ProxyImage {
     filename: String,
-    image: RealImage
+    image: RealImage,
 }
 
 impl RealImage {
     fn new(filename: String) -> Self {
-        Self {
-            filename
-        }
+        Self { filename }
     }
 }
 

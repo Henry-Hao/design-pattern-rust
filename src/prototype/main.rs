@@ -1,4 +1,3 @@
-
 trait Prototype: Sized {
     fn set_color(&mut self, color: ColorType);
     fn set_shape(&mut self, shape: ShapeType);
@@ -7,28 +6,28 @@ trait Prototype: Sized {
 #[derive(Debug, Clone)]
 struct Shape {
     color: ColorType,
-    shape: ShapeType
+    shape: ShapeType,
 }
 
 #[derive(Debug, Clone)]
 enum ColorType {
     Red,
     Yellow,
-    Blue
+    Blue,
 }
 
 #[derive(Debug, Clone)]
 enum ShapeType {
     Circle,
     Square,
-    Rectangle
+    Rectangle,
 }
 
 impl Shape {
     fn new() -> Self {
         Shape {
             color: ColorType::Red,
-            shape: ShapeType::Circle
+            shape: ShapeType::Circle,
         }
     }
 }

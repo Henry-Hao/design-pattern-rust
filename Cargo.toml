@@ -54,3 +54,7 @@ path = "src/strategy/main.rs"
 [[bin]]
 name = "visitor"
 path = "src/visitor/main.rs"
+
+[[bin]]
+name = "mvc"
+path = "src/MVC/main.rs"

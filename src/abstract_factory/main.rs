@@ -6,11 +6,10 @@ trait Color {
     fn fill(&self);
 }
 
-
 enum ShapeType {
     Circle,
     Square,
-    Rectangle
+    Rectangle,
 }
 
 struct Circle;
@@ -35,11 +34,10 @@ impl Shape for Rectangle {
     }
 }
 
-
 enum ColorType {
     Red,
     Blue,
-    Yellow
+    Yellow,
 }
 
 struct Red;
@@ -66,21 +64,20 @@ impl Color for Yellow {
 
 enum FactoryType {
     ShapeFactory,
-    ColorFactory
+    ColorFactory,
 }
 struct ShapeFactory;
 struct ColorFactory;
-
 
 trait Factory {
     fn create_shape(&self, t: ShapeType) -> Option<Box<dyn Shape>>;
     fn create_color(&self, t: ColorType) -> Option<Box<dyn Color>>;
 }
-impl Factory for ShapeFactory { 
+impl Factory for ShapeFactory {
     fn create_shape(&self, t: ShapeType) -> Option<Box<dyn Shape>> {
         Some(match t {
             ShapeType::Circle => Box::new(Circle),
-            ShapeType::Square => Box::new(Square ),
+            ShapeType::Square => Box::new(Square),
             ShapeType::Rectangle => Box::new(Rectangle),
         })
     }
@@ -113,7 +110,7 @@ impl AbstractFactory for F {
     fn create_factory(t: FactoryType) -> Box<dyn Factory> {
         match t {
             FactoryType::ShapeFactory => Box::new(ShapeFactory),
-            FactoryType::ColorFactory => Box::new(ColorFactory)
+            FactoryType::ColorFactory => Box::new(ColorFactory),
         }
     }
 }

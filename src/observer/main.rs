@@ -11,12 +11,15 @@ trait Observable<'a, T: Observer> {
 
 #[derive(PartialEq)]
 struct BinaryObserver {
-    id: i32
+    id: i32,
 }
 
 impl Observer for BinaryObserver {
     fn update(&self, num: u8) {
-        println!("Update from BinaryObserver {}, binary of {} is: {:b}", self.id, num, num);
+        println!(
+            "Update from BinaryObserver {}, binary of {} is: {:b}",
+            self.id, num, num
+        );
     }
 
     fn new(id: i32) -> Self {
@@ -56,10 +59,10 @@ impl Observer for BinaryObserver {
 //
 struct Subject<'a, T: Observer> {
     data: u8,
-    observers: Vec<&'a T>
+    observers: Vec<&'a T>,
 }
 
-impl <'a, T: Observer + PartialEq> Observable<'a, T> for Subject<'a, T> {
+impl<'a, T: Observer + PartialEq> Observable<'a, T> for Subject<'a, T> {
     fn attach(&mut self, observer: &'a T) {
         self.observers.push(observer);
     }
@@ -75,14 +78,13 @@ impl <'a, T: Observer + PartialEq> Observable<'a, T> for Subject<'a, T> {
             observer.update(self.data);
         }
     }
-
 }
 
 impl<'a, T: Observer + PartialEq> Subject<'a, T> {
     fn new(data: u8) -> Subject<'a, T> {
         Self {
             data,
-            observers: Vec::new()
+            observers: Vec::new(),
         }
     }
 
@@ -91,7 +93,6 @@ impl<'a, T: Observer + PartialEq> Subject<'a, T> {
         self.notify();
     }
 }
-
 
 fn main() {
     let mut subject = Subject::new(10);

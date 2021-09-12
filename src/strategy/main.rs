@@ -25,7 +25,7 @@ impl Strategy for OperationMul {
 struct Context {
     oprand_a: i32,
     oprand_b: i32,
-    strategy: Box<dyn Strategy>
+    strategy: Box<dyn Strategy>,
 }
 
 impl Context {
@@ -38,7 +38,7 @@ fn main() {
     let mut context = Context {
         oprand_a: 4,
         oprand_b: 3,
-        strategy: Box::new(OperationAdd)
+        strategy: Box::new(OperationAdd),
     };
     context.operate();
     context.strategy = Box::new(OperationMul);

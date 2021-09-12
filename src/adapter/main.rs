@@ -32,21 +32,21 @@ impl AdvancedMediaPlayerTrait for Mp4Player {
 /// The following two structs illustrate the pattern
 struct MediaAdapter;
 struct AudioPlayer {
-    player: MediaAdapter
+    player: MediaAdapter,
 }
 
 #[derive(Debug)]
 enum Type {
     MP3,
     MP4,
-    VLC
+    VLC,
 }
 impl MediaPlayerTrait for MediaAdapter {
     fn play(&self, t: Type) {
         match t {
             Type::MP4 => Mp4Player.play_mp4(),
             Type::VLC => VlcPlayer.play_vlc(),
-            _ => println!("{:?} not supported", t)
+            _ => println!("{:?} not supported", t),
         }
     }
 }
@@ -54,10 +54,10 @@ impl MediaPlayerTrait for MediaAdapter {
 impl AudioPlayer {
     fn new() -> Self {
         Self {
-            player: MediaAdapter
+            player: MediaAdapter,
         }
     }
-    fn play_mp3(&self){
+    fn play_mp3(&self) {
         println!("audio players play mp3");
     }
 }
@@ -66,11 +66,10 @@ impl MediaPlayerTrait for AudioPlayer {
     fn play(&self, t: Type) {
         match t {
             Type::MP3 => self.play_mp3(),
-            _ => self.player.play(t)
+            _ => self.player.play(t),
         }
     }
 }
-
 
 fn main() {
     let audio_player = AudioPlayer::new();

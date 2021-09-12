@@ -1,20 +1,20 @@
 #[derive(Debug, Copy, Clone)]
 enum Gender {
     Male,
-    Female
+    Female,
 }
 #[derive(Debug)]
 struct Person {
     name: String,
     gender: Gender,
-    age: u8
+    age: u8,
 }
 
 #[derive(Debug)]
 struct PersonBuilder {
     name: String,
     gender: Gender,
-    age: u8
+    age: u8,
 }
 
 impl Default for PersonBuilder {
@@ -22,7 +22,7 @@ impl Default for PersonBuilder {
         Self {
             name: "".to_owned(),
             gender: Gender::Male,
-            age: 0
+            age: 0,
         }
     }
 }
@@ -59,15 +59,14 @@ impl PersonBuilder {
         self
     }
 
-    fn finish(&mut self)  -> Person {
+    fn finish(&mut self) -> Person {
         Person {
             name: self.name.clone(),
             age: self.age,
-            gender: self.gender
+            gender: self.gender,
         }
     }
 }
-
 
 fn main() {
     let mut builder = PersonBuilder::new();

@@ -3,14 +3,14 @@ trait DrawAPI {
 }
 
 struct Shape {
-    drawApi: Box<dyn DrawAPI>
+    drawApi: Box<dyn DrawAPI>,
 }
 
 struct Circle {
     x: u8,
     y: u8,
     radius: u8,
-    shape: Shape
+    shape: Shape,
 }
 
 struct RedCircle;
@@ -31,12 +31,10 @@ impl DrawAPI for GreenCircle {
 impl Circle {
     fn new(x: u8, y: u8, radius: u8, api: Box<dyn DrawAPI>) -> Self {
         Self {
-            shape: Shape {
-                drawApi: api
-            },
+            shape: Shape { drawApi: api },
             x,
             y,
-            radius
+            radius,
         }
     }
 

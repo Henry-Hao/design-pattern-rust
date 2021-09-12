@@ -4,16 +4,16 @@ static mut INSTANCE: Option<Singleton> = None;
 
 #[derive(Debug)]
 struct Singleton {
-    val: i32
+    val: i32,
 }
 
 impl Singleton {
-    fn get_instance() ->  &'static mut Singleton{
+    fn get_instance() -> &'static mut Singleton {
         unsafe {
             match INSTANCE {
                 Some(ref mut instance) => instance,
                 None => {
-                    INSTANCE = Some(Singleton{ val: 100 });
+                    INSTANCE = Some(Singleton { val: 100 });
                     Singleton::get_instance()
                 }
             }
@@ -31,7 +31,8 @@ fn main() {
     thread::spawn(|| {
         println!("{:?}", Singleton::get_instance());
         Singleton::get_instance().val = 99;
-    }).join().unwrap();
+    })
+    .join()
+    .unwrap();
     println!("{:?}", a);
-
 }

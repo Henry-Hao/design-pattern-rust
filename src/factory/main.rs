@@ -9,7 +9,7 @@ struct Rectangle;
 enum Type {
     Circle,
     Square,
-    Rectangle
+    Rectangle,
 }
 
 impl Shape for Circle {
@@ -32,7 +32,7 @@ fn shape_factory(t: Type) -> Box<dyn Shape> {
     match t {
         Type::Circle => Box::new(Circle),
         Type::Square => Box::new(Square),
-        Type::Rectangle => Box::new(Rectangle)
+        Type::Rectangle => Box::new(Rectangle),
     }
 }
 
