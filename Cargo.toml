@@ -46,3 +46,7 @@ path = "src/proxy/main.rs"
 [[bin]]
 name = "observer"
 path = "src/observer/main.rs"
+
+[[bin]]
+name = "strategy"
+path = "src/strategy/main.rs"
